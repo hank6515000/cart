@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/User/Desktop/cart-master/app/src/main/res/layout/buy_cart.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/User/Desktop/cart-master/app/src/main/res/layout/buy_cart_style.xml" value="0.33" />
+        <entry key="..\:/Users/User/Desktop/cart-master/app/src/main/res/layout/buylist_in_style.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/User/Desktop/cart-master/app/src/main/res/layout/buylist_style.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/User/Desktop/cart-master/app/src/main/res/layout/fragment_buylist.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/cart-master/app/src/main/res/layout/fragment_member.xml" value="0.5" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

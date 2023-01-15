@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">My_Project_04</string>
+    <string name="title_home">首頁</string>
+    <string name="title_buy_list">購買</string>
+    <string name="title_member">會員</string>
+</resources>
