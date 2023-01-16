@@ -40,11 +40,17 @@ import java.util.Map;
 public class MyBuyCarAdapter extends RecyclerView.Adapter<MyBuyCarAdapter.MyCartViewHolder> {
 
     private ArrayList<FetchData> fetchDataList;
-    private ArrayList<CartNum> cartNumList;
+    private Map<String,CartNum> cartNumMap;
     private User user;
     private DatabaseReference buyCartReference, usersReference;
 
     public MyBuyCarAdapter() {
+    }
+
+
+
+    public void setCartNumMap(Map<String, CartNum> cartNumMap) {
+        this.cartNumMap = cartNumMap;
     }
 
     public void setFetchDataList(ArrayList<FetchData> fetchDataList) {
@@ -55,16 +61,9 @@ public class MyBuyCarAdapter extends RecyclerView.Adapter<MyBuyCarAdapter.MyCart
         this.user = user;
     }
 
-    public void setCartNumList(ArrayList<CartNum> cartNumList) {
-        this.cartNumList = cartNumList;
-    }
 
     public ArrayList<FetchData> getFetchDataList() {
         return fetchDataList;
-    }
-
-    public ArrayList<CartNum> getCartNumList() {
-        return cartNumList;
     }
 
     public User getUser() {
@@ -102,11 +101,19 @@ public class MyBuyCarAdapter extends RecyclerView.Adapter<MyBuyCarAdapter.MyCart
             MyCartViewHolder myCartViewHolder = (MyCartViewHolder) holder;
         Log.e("0000030", "position: "+ position);
         Log.e("0000030", "detchData: "+ fetchDataList);
-        Log.e("0000030", "cartNum: "+ cartNumList);
+        Log.e("0000030", "cartNum: "+ cartNumMap);
+
             FetchData fetchData = fetchDataList.get(position);
             Glide.with(myCartViewHolder.buy_cart_pic.getContext()).load(fetchData.getImage()).into(myCartViewHolder.buy_cart_pic);
             myCartViewHolder.buy_cart_title.setText(fetchData.getTitle());
 
+            List<CartNum> cartNumList = new ArrayList<>();
+
+            for (CartNum cartNum : cartNumMap.values()){
+                cartNumList.add(cartNum);
+            }
+
+            Log.e("0000030", "cartNum: "+ cartNumList);
             CartNum cartNum = cartNumList.get(position);
             Log.e("0000030", "Product" +cartNum.getProduct());
             Log.e("0000030", "Price" + cartNum.getPrice());
@@ -122,7 +129,7 @@ public class MyBuyCarAdapter extends RecyclerView.Adapter<MyBuyCarAdapter.MyCart
                 public void onClick(View view) {
                     String getNum = myCartViewHolder.buy_cart_num.getText().toString();
                     int num = Integer.parseInt(getNum);
-                    String product = String.valueOf(cartNum.getProduct());
+                    String product = "product"+cartNum.getProduct();
                     num++;
                     myCartViewHolder.buy_cart_num.setText("" + num);
                     String price =fetchData.getPrice();
@@ -142,7 +149,7 @@ public class MyBuyCarAdapter extends RecyclerView.Adapter<MyBuyCarAdapter.MyCart
                 public void onClick(View view) {
                     String getNum = myCartViewHolder.buy_cart_num.getText().toString();
                     int num = Integer.parseInt(getNum);
-                    String product = String.valueOf(cartNum.getProduct());
+                    String product = "product"+cartNum.getProduct();
                     num--;
                     myCartViewHolder.buy_cart_num.setText("" + num);
                     String price =fetchData.getPrice();
@@ -178,14 +185,14 @@ public class MyBuyCarAdapter extends RecyclerView.Adapter<MyBuyCarAdapter.MyCart
 
     @Override
     public int getItemCount() {
-        return cartNumList.size();
+        return cartNumMap.size();
     }
 
     @Override
     public String toString() {
         return "MyBuyCarAdapter{" +
                 "fetchDataList=" + fetchDataList +
-                ", cartNumList=" + cartNumList +
+                ", cartNumList=" + cartNumMap +
                 ", user=" + user +
                 '}';
     }

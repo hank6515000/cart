@@ -6,10 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Cart {
-
-    public String username;
     public String userId;
-    public List<CartNum> cartNum;
+    public Map<String,CartNum> cartNum;
 
     public Cart() {
     }
@@ -22,26 +20,18 @@ public class Cart {
         this.userId = userId;
     }
 
-    public List<CartNum> getCartNum() {
+    public Map<String, CartNum> getCartNum() {
         return cartNum;
     }
 
-    public void setCartNum(List<CartNum> cartNum) {
+    public void setCartNum(Map<String, CartNum> cartNum) {
         this.cartNum = cartNum;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     @Override
     public String toString() {
         return "Cart{" +
-                "username='" + username + '\'' +
+
                 ", userId='" + userId + '\'' +
                 ", cartnum=" + cartNum +
                 '}';

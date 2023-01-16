@@ -51,7 +51,7 @@ public class BuyCartActivity extends AppCompatActivity {
 
         MyBuyCarAdapter myBuyCarAdapter =new MyBuyCarAdapter();
 
-        ArrayList<CartNum> cartNumList = new ArrayList<>();
+        Map<String,CartNum>cartNumMap = new HashMap<>();
         buyCartReference = FirebaseDatabase.getInstance().getReference("cart");
         buyCartReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -63,15 +63,15 @@ public class BuyCartActivity extends AppCompatActivity {
                             cartNumReference.addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    cartNumList.clear();
+                                    cartNumMap.clear();
                                     for (DataSnapshot ds : snapshot.getChildren()) {
                                         CartNum cartNum = ds.getValue(CartNum.class);
-                                        cartNumList.add(cartNum);
+                                        cartNumMap.put("product"+cartNum.getProduct(),cartNum);
                                     }
 
-                                    myBuyCarAdapter.setCartNumList(cartNumList);
+                                    myBuyCarAdapter.setCartNumMap(cartNumMap);
                                     int total = 0;
-                                    for (CartNum cartNum : cartNumList) {
+                                    for (CartNum cartNum : cartNumMap.values()) {
                                         total += cartNum.getPrice() * cartNum.getNum();
                                     }
                                     buy_cart_total.setText("" + total);
@@ -112,7 +112,7 @@ public class BuyCartActivity extends AppCompatActivity {
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                             for (DataSnapshot ds : snapshot.getChildren()) {
                                                 FetchData fetchData = ds.getValue(FetchData.class);
-                                                for (CartNum cartNum : cartNumList) {
+                                                for (CartNum cartNum : cartNumMap.values()) {
                                                     if (fetchData.getId() == cartNum.getProduct()) {
                                                         fetchDataList.add(fetchData);
                                                     }

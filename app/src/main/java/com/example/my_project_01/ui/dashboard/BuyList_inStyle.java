@@ -42,12 +42,9 @@ public class BuyList_inStyle extends AppCompatActivity {
     private ImageView buy_in_image;
     private TextView buy_in_til, buy_in_det, buy_in_pri, buy_in_cart, buy_in_buy;
     private int position;
-    private ArrayList<Cart> cartDataArrayList = new ArrayList<>();
-    private ArrayList<CartNum> cartNumDataArrayList = new ArrayList<>();
+    private ArrayList<Cart> cartDataList = new ArrayList<>();
+    private ArrayList<CartNum> cartNumDataList = new ArrayList<>();
     private String userId;
-    private boolean hasCart;
-    private int count;
-    private int product;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,12 +86,7 @@ public class BuyList_inStyle extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds : snapshot.getChildren()) {
                     CartNum cartNum = ds.getValue(CartNum.class);
-                    if (cartNum.getProduct() == fetchDataList.get(position).getId()) {
-                        count = cartNum.getNum()+1;
-                        product = cartNum.getProduct();
-                    }else {
-                        product = 0;
-                    }
+                    cartNumDataList.add(cartNum);
                 }
             }
 
@@ -111,13 +103,7 @@ public class BuyList_inStyle extends AppCompatActivity {
                 for (DataSnapshot ds : snapshot.getChildren()){
                     System.out.println(ds);
                     Cart cartInCart = ds.getValue(Cart.class);
-                    System.out.println(cartInCart);
-                    if (cartInCart.getUserId().equals(userId)){
-                        hasCart = true;
-                    }else {
-                        hasCart = false;
-                    }
-
+                    cartDataList.add(cartInCart);
                 }
             }
 
@@ -161,31 +147,41 @@ public class BuyList_inStyle extends AppCompatActivity {
         }
     };
     private void add_cart() {
-        Cart newCart = new Cart();
-        newCart.setUserId(userId);
-        if (product == 0){
-            if (hasCart){
-                System.out.println("沒有product有cart");
+        int productId = position+1;
+
+        for (Cart cart :cartDataList){
+            if (cart.getUserId().equals(userId)){
+                for (CartNum cartNum :cartNumDataList){
+                    if (cartNum.getProduct() == fetchDataList.get(position).getId()){
+                        System.out.println("有product有cart");
+                        Map<String, Object> map = new HashMap<>();
+                        map.put("num",cartNum.getNum()+1);
+                        buyCartReference.child(userId).child("cartNum").child("product"+productId).updateChildren(map);
+                        return;
+                    }else {
+                        System.out.println("沒有product有cart");
+                        Map<String, Object> map = new HashMap<>();
+                        map.put("num",1);
+                        map.put("price",Integer.parseInt(fetchDataList.get(position).getPrice()));
+                        map.put("product",fetchDataList.get(position).getId());
+                        cartNumReference.child("product"+productId).setValue(map);
+                        return;
+                    }
+                }
+            }else {
+                System.out.println("沒有product沒有cart");
                 CartNum newCartNum = new CartNum();
+                Cart newCart = new Cart();
+                newCart.setUserId(userId);
                 newCartNum.setNum(1);
                 newCartNum.setProduct(fetchDataList.get(position).getId());
                 newCartNum.setPrice(Integer.parseInt(fetchDataList.get(position).getPrice()));
                 buyCartReference.child(userId).setValue(newCart);
-                cartNumReference.child(String.valueOf(position+1)).setValue(newCartNum);
-            }else {
-                System.out.println("沒有product沒有cart");
-                Map<String, Object> map = new HashMap<>();
-                map.put("num",1);
-                map.put("price",Integer.parseInt(fetchDataList.get(position).getPrice()));
-                map.put("product",fetchDataList.get(position).getId());
-                cartNumReference.child(String.valueOf(position+1)).setValue(map);
+                cartNumReference.child("product"+productId).setValue(newCartNum);
+                return;
             }
-        }else {
-            System.out.println("有product");
-            Map<String, Object> map = new HashMap<>();
-            map.put("num",count);
-            buyCartReference.child(userId).child("cartNum").child(String.valueOf(position+1)).updateChildren(map);
         }
+
 
     }
 
