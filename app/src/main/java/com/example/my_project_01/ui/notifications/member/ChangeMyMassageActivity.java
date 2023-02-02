@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.my_project_01.LoginActivity;
 import com.example.my_project_01.R;
 import com.example.my_project_01.ui.notifications.member.WalletActivity;
 import com.google.firebase.database.DatabaseReference;
@@ -37,7 +38,7 @@ public class ChangeMyMassageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_my_massage);
-        dateTV =  findViewById(R.id.tv_date);
+        dateTV = findViewById(R.id.tv_date);
         nameED = findViewById(R.id.ed_name);
 
         userId = getIntent().getStringExtra("userId");
@@ -54,11 +55,11 @@ public class ChangeMyMassageActivity extends AppCompatActivity {
         /**
          * 性別設置
          */
-        genderRG =  findViewById(R.id.rg_gender);
+        genderRG = findViewById(R.id.rg_gender);
         genderRG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checked) {
-                switch (checked){
+                switch (checked) {
                     case R.id.male:
                         gender = "男";
                         break;
@@ -85,7 +86,7 @@ public class ChangeMyMassageActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                                String desc = String.format("%d/%d/%d",year,month+1,day);
+                                String desc = String.format("%d/%d/%d", year, month + 1, day);
                                 dateTV.setText(desc);
                             }
                         },
@@ -101,32 +102,32 @@ public class ChangeMyMassageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference reference = database.getReference("users").child(userId);
-                Map<String,Object> updateProfile = new HashMap<>();
+                DatabaseReference reference = database.getReference("users").child(LoginActivity.user_ID);
+                Map<String, Object> updateProfile = new HashMap<>();
                 String nameStr = nameED.getText().toString();
                 String phoneStr = phoneED.getText().toString();
                 String birthbayStr = dateTV.getText().toString();
-                if (!(nameStr.isEmpty() && phoneStr.isEmpty() && birthbayStr.isEmpty() && gender.isEmpty())){
+                if (!(nameStr.isEmpty() && phoneStr.isEmpty() && birthbayStr.isEmpty() && gender.isEmpty())) {
                     String regName = "((^[a-zA-Z0-9_-]{6,16}$)|(^[\\u2E80-\\u9FFF]{2,5}))";
-                    if (!nameStr.matches(regName)){
+                    if (!nameStr.matches(regName)) {
                         Toast.makeText(ChangeMyMassageActivity.this, "姓名必須是3-5位中文或6-16位英文", Toast.LENGTH_SHORT).show();
-                    }else {
+                    } else {
                         String regPhone = "(^09[0-9]{8}$)";
-                        if (!phoneStr.matches(regPhone)){
+                        if (!phoneStr.matches(regPhone)) {
                             Toast.makeText(ChangeMyMassageActivity.this, "手機必須是09開頭加8位數字", Toast.LENGTH_SHORT).show();
-                        }else {
-                            updateProfile.put("name",nameStr);
-                            updateProfile.put("phone",phoneStr);
-                            updateProfile.put("gender",gender);
-                            updateProfile.put("birthDay",birthbayStr);
+                        } else {
+                            updateProfile.put("name", nameStr);
+                            updateProfile.put("phone", phoneStr);
+                            updateProfile.put("gender", gender);
+                            updateProfile.put("birthDay", birthbayStr);
                             reference.updateChildren(updateProfile);
                             Toast.makeText(ChangeMyMassageActivity.this, "儲存成功", Toast.LENGTH_SHORT).show();
                         }
                     }
-                }else {
+                } else {
                     Toast.makeText(ChangeMyMassageActivity.this, "不可有空白，請重新輸入", Toast.LENGTH_SHORT).show();
                 }
-                  }
+            }
         });
 
 

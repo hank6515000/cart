@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/buy_cart_title"
+        android:id="@+id/goods_style_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -15,42 +15,42 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/buy_cart_tv"
-        app:layout_constraintStart_toEndOf="@+id/buy_cart_pic" />
+        app:layout_constraintBottom_toTopOf="@+id/goods_style_tv"
+        app:layout_constraintStart_toEndOf="@+id/goods_style_pic" />
 
     <TextView
-        android:id="@+id/buy_cart_tv"
+        android:id="@+id/goods_style_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="8dp"
         android:text="NT $"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/buy_cart_title"
-        app:layout_constraintTop_toTopOf="@+id/buy_cart_price" />
+        app:layout_constraintStart_toStartOf="@+id/goods_style_title"
+        app:layout_constraintTop_toTopOf="@+id/goods_style_price" />
 
     <TextView
-        android:id="@+id/buy_cart_price"
+        android:id="@+id/goods_style_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
         android:layout_marginTop="13dp"
         android:text="Price Text"
         android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/buy_cart_tv"
-        app:layout_constraintTop_toBottomOf="@+id/buy_cart_title" />
+        app:layout_constraintStart_toEndOf="@+id/goods_style_tv"
+        app:layout_constraintTop_toBottomOf="@+id/goods_style_title" />
 
     <ImageView
-        android:id="@+id/buy_cart_pic"
+        android:id="@+id/goods_style_pic"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="15dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/buy_cart_cb"
-        app:layout_constraintEnd_toStartOf="@+id/buy_cart_title"
-        app:layout_constraintStart_toEndOf="@+id/buy_cart_cb"
-        app:layout_constraintTop_toTopOf="@+id/buy_cart_cb"
+        app:layout_constraintBottom_toBottomOf="@+id/buy_cart_ch"
+        app:layout_constraintEnd_toStartOf="@+id/goods_style_title"
+        app:layout_constraintStart_toEndOf="@+id/buy_cart_ch"
+        app:layout_constraintTop_toTopOf="@+id/buy_cart_ch"
         app:srcCompat="@drawable/toxic" />
 
     <ImageView
@@ -58,14 +58,14 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/buy_cart_pic"
+        app:layout_constraintBottom_toBottomOf="@+id/goods_style_pic"
         app:layout_constraintEnd_toStartOf="@+id/buy_cart_num"
-        app:layout_constraintStart_toEndOf="@+id/buy_cart_price"
-        app:layout_constraintTop_toTopOf="@+id/buy_cart_pic"
+        app:layout_constraintStart_toEndOf="@+id/goods_style_price"
+        app:layout_constraintTop_toTopOf="@+id/goods_style_pic"
         app:srcCompat="@drawable/sub" />
 
     <CheckBox
-        android:id="@+id/buy_cart_cb"
+        android:id="@+id/buy_cart_ch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

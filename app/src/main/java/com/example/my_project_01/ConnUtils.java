@@ -31,7 +31,7 @@ public class ConnUtils<T> {
         return dataList;
     }
 
-    public  void connFireBase(String data, String clazz, String adapter, RecyclerView recyclerView) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public void connFireBase(String data, String clazz, String adapter, RecyclerView recyclerView) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         databaseReference = FirebaseDatabase.getInstance().getReference(data);
         Class<T> tClass = (Class<T>) Class.forName(clazz);
         T getClass = (T) tClass.newInstance();
@@ -42,11 +42,11 @@ public class ConnUtils<T> {
                     T fetchData = (T) ds.getValue(getClass.getClass());
                     dataList.add(fetchData);
                 }
-                if (adapter != null && recyclerView !=null) {
+                if (adapter != null && recyclerView != null) {
                     try {
 
                         Class AdapterClazz = Class.forName(adapter);
-                        Constructor<T> constructor = AdapterClazz.getConstructor(List.class,String.class);
+                        Constructor<T> constructor = AdapterClazz.getConstructor(List.class, String.class);
                         T instance = (T) constructor.newInstance(dataList);
 
                         recyclerView.setAdapter((RecyclerView.Adapter) instance);
@@ -65,6 +65,7 @@ public class ConnUtils<T> {
 
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 

@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Cart {
     public String userId;
-    public Map<String,CartNum> cartNum;
+    public Map<String, CartNum> cartNum;
 
     public Cart() {
     }
@@ -31,7 +31,6 @@ public class Cart {
     @Override
     public String toString() {
         return "Cart{" +
-
                 ", userId='" + userId + '\'' +
                 ", cartnum=" + cartNum +
                 '}';

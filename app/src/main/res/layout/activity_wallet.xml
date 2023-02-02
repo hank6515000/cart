@@ -89,7 +89,7 @@
         android:layout_marginTop="15dp">
 
         <LinearLayout
-            android:id="@+id/take_out_money"
+            android:id="@+id/add_money"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
@@ -110,7 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="提款"
+                android:text="儲值"
                 android:gravity="center_horizontal"/>
         </LinearLayout>
 

@@ -21,7 +21,7 @@ public class SettingActivity extends AppCompatActivity {
     private ListView setting_list;
     private ImageView setting_back;
 
-    String[] func = {"銀行帳號/信用卡", "變更錢包密碼"};
+    private String[] func = {"銀行帳號/信用卡", "變更錢包密碼"};
 
 
     @Override
@@ -41,38 +41,39 @@ public class SettingActivity extends AppCompatActivity {
         });
 
 
-        setting_list = findViewById(R.id.setting_list);
-        MySettingActivity adapter = new MySettingActivity();
-        setting_list.setAdapter(adapter);
+//        setting_list = findViewById(R.id.setting_list);
+//        MySettingActivity adapter = new MySettingActivity();
+//        setting_list.setAdapter(adapter);
 
     }
-    class MySettingActivity extends BaseAdapter {
 
-        @Override
-        public int getCount() {
-            return func.length;
-        }
-
-        @Override
-        public Object getItem(int i) {
-            return func[i];
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
-            View r = view;
+//    class MySettingActivity extends BaseAdapter {
+//
+//        @Override
+//        public int getCount() {
+//            return func.length;
+//        }
+//
+//        @Override
+//        public Object getItem(int i) {
+//            return func[i];
+//        }
+//
+//        @Override
+//        public long getItemId(int i) {
+//            return 0;
+//        }
+//
+//        @Override
+//        public View getView(int i, View view, ViewGroup viewGroup) {
+//            View r = view;
 //            if (r == null) {
 //                r = getLayoutInflater().inflate(R.layout.revise_style, null);
 //                TextView tv_steeing = r.findViewById(R.id.tv_revise);
 //                tv_steeing.setText(func[i]);
 //            }
-            return r;
-        }
-
-        }
-    };
+//            return r;
+//        }
+//
+//    }
+}

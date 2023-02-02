@@ -2,14 +2,15 @@ package com.example.my_project_01.pojo;
 
 public class User {
     private String userId;
-   private String name;
-   private String email;
-   private long balance;
-   private String cart;
-   private String cost;
-   private String gender;
-   private String birthDay;
-   private String phone;
+    private String name;
+    private String email;
+    private long balance;
+    private String cart;
+    private String cost;
+    private String gender;
+    private String birthDay;
+    private String phone;
+
 
     public User() {
     }
@@ -37,7 +38,6 @@ public class User {
     public void setBirthDay(String birthDay) {
         this.birthDay = birthDay;
     }
-
 
 
     public String getUserId() {

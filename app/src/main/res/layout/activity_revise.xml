@@ -46,21 +46,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/white">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:text="使用者名稱"
                 android:textSize="20dp"
-                android:layout_margin="5dp"
-                />
+                android:layout_margin="5dp" />
+
+
 
             <TextView
                 android:id="@+id/tv_name"
@@ -72,11 +74,15 @@
                 android:layout_margin="5dp"
                 />
         </LinearLayout>
-
+        <View
+            android:background="#E8E8E8"
+            android:layout_height="0.1dp"
+            android:layout_width="fill_parent"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/white">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -97,10 +103,16 @@
                 />
         </LinearLayout>
 
+        <View
+            android:background="#E8E8E8"
+            android:layout_height="0.1dp"
+            android:layout_width="fill_parent"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/white">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -120,11 +132,16 @@
                 android:layout_margin="5dp"
                 />
         </LinearLayout>
+        <View
+            android:background="#E8E8E8"
+            android:layout_height="0.1dp"
+            android:layout_width="fill_parent"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/white">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -144,11 +161,16 @@
                 android:layout_margin="5dp"
                 />
         </LinearLayout>
+        <View
+            android:background="#E8E8E8"
+            android:layout_height="0.1dp"
+            android:layout_width="fill_parent"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/white">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

@@ -1,24 +1,26 @@
 package com.example.my_project_01.pojo;
 
 public class CartNum {
-    public int product;
+    public String productId;
     public int price, num;
+    public boolean checked;
 
     public CartNum() {
     }
 
-    public CartNum(int product, int price, int num) {
-       this.product = product;
+    public CartNum(String productId, int price, int num, boolean checked) {
+        this.productId = productId;
         this.price = price;
         this.num = num;
+        this.checked = checked;
     }
 
-    public int getProduct() {
-        return product;
+    public String getProductId() {
+        return productId;
     }
 
-    public void setProduct(int product) {
-        this.product = product;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
     public int getPrice() {
@@ -37,10 +39,18 @@ public class CartNum {
         this.num = num;
     }
 
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
     @Override
     public String toString() {
         return "CartNum{" +
-                "product=" + product +
+                "product=" + productId +
                 ", price=" + price +
                 ", num=" + num +
                 '}';

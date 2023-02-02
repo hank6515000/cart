@@ -27,7 +27,6 @@ import com.example.my_project_01.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private TextView tv1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = this.getIntent().getExtras();
         MemberFragment memberFragment = new MemberFragment();
         BuyListFragment buyListFragment = new BuyListFragment();
+
         buyListFragment.setArguments(bundle);
         memberFragment.setArguments(bundle);
 
@@ -49,8 +49,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         FloatingWindow fw = new FloatingWindow(this);
+        fw.setBundle(bundle);
         this.addContentView(fw, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
     }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {//捕捉返回鍵
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
@@ -63,14 +65,12 @@ public class MainActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-
     @Override
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             // 什麼都不用寫
-        }
-        else {
+        } else {
             // 什麼都不用寫
         }
     }

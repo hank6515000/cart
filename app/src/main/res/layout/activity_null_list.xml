@@ -61,7 +61,7 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
-                app:srcCompat="@drawable/clock_list" />
+                app:srcCompat="@drawable/findist" />
 
             <TextView
                 android:layout_width="wrap_content"

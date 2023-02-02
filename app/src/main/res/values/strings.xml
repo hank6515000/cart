@@ -1,6 +1,20 @@
 <resources>
-    <string name="app_name">My_Project_04</string>
+    <string name="app_name">小蝦皮</string>
     <string name="title_home">首頁</string>
     <string name="title_buy_list">購買</string>
     <string name="title_member">會員</string>
+
+    <array name="goods">
+        <item>美食</item>
+        <item>寵物用品</item>
+        <item>運動用品</item>
+        <item>衣物</item>
+        <item>美妝保養</item>
+        <item>嬰兒用品</item>
+        <item>3C用品</item>
+        <item>汽機車</item>
+        <item>電腦與周邊</item>
+        <item>文具與美術</item>
+        <item>其他</item>
+    </array>
 </resources>

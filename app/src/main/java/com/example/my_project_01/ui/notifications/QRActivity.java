@@ -26,11 +26,7 @@ public class QRActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-
             }
-
-
         });
-
     }
 }

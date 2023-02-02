@@ -30,7 +30,7 @@ public class ReviseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_revise);
 
-        TextView name  = findViewById(R.id.tv_name);
+        TextView name = findViewById(R.id.tv_name);
         String nameStr = getIntent().getStringExtra("name");
         name.setText(nameStr);
         TextView email = findViewById(R.id.tv_email);

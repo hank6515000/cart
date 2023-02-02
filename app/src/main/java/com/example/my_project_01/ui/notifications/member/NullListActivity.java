@@ -24,14 +24,14 @@ public class NullListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_null_list);
 
-        null_back=findViewById(R.id.null_back);
+        null_back = findViewById(R.id.null_back);
         null_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
-        null_goshop=findViewById(R.id.null_goshop);
+        null_goshop = findViewById(R.id.null_goshop);
         null_goshop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,7 +40,5 @@ public class NullListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 }

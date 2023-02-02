@@ -4,88 +4,159 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gameback"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="猜拳遊戲"
-        android:textSize="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="48dp"-->
+    <!--        android:text="猜拳遊戲"-->
+    <!--        android:textSize="40dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <TextView
-        android:id="@+id/tv_com"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="電腦出拳"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toStartOf="@+id/tv_play"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_com"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        android:text="電腦出拳"-->
+    <!--        android:textSize="30dp"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/tv_play"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv" />-->
 
-    <TextView
-        android:id="@+id/tv_play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="玩家出拳"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_com"
-        app:layout_constraintTop_toBottomOf="@+id/tv" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_play"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        android:text="玩家出拳"-->
+    <!--        android:textSize="30dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/tv_com"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv" />-->
+
 
     <ImageButton
         android:id="@+id/ib_scissors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="243dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_play"
-        app:srcCompat="@drawable/scissors" />
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#00000000"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/btn_start"
+        app:layout_constraintEnd_toStartOf="@id/ib_stone"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/scissors_pink" />
 
     <ImageButton
         android:id="@+id/ib_stone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/ib_scissors"
-        app:layout_constraintStart_toStartOf="@+id/ib_scissors"
-        app:srcCompat="@drawable/stone"/>
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#00000000"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/btn_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/ston_green" />
 
     <ImageButton
         android:id="@+id/ib_paper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/ib_stone"
-        app:layout_constraintStart_toStartOf="@+id/ib_stone"
-        app:srcCompat="@drawable/paper" />
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#00000000"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/btn_start"
+        app:layout_constraintStart_toEndOf="@id/ib_stone"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/paper_blue" />
+
+
+    <ImageView
+        android:id="@+id/game"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:background="@drawable/game"
+        app:layout_constraintBottom_toBottomOf="@id/iv_com"
+        app:layout_constraintBottom_toTopOf="@id/ib_stone"
+        app:layout_constraintEnd_toEndOf="@id/iv_com"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@id/iv_com"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.254" />
 
     <ImageView
         android:id="@+id/iv_com"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_com"
-        app:layout_constraintTop_toTopOf="@+id/ib_stone"
-        app:srcCompat="@drawable/scissors" />
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/game_rock_animation"
+        app:layout_constraintBottom_toBottomOf="@id/game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/game" />
+
 
     <TextView
         android:id="@+id/tv_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
-        android:textSize="30dp"
+        android:layout_margin="30dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@id/ib_stone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_paper" />
+        app:layout_constraintTop_toBottomOf="@+id/game" />
+
+    <ImageView
+        android:id="@+id/img_result"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result" />
+
+    <ImageView
+        android:id="@+id/img_chances"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/chance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#CC5C00"
+        android:text="START"
+        android:textColor="#E4E4E4"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/img_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ib_stone"
+        tools:layout_editor_absoluteX="211dp"
+        tools:layout_editor_absoluteY="399dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

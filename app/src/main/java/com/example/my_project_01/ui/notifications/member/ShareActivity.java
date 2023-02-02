@@ -28,13 +28,10 @@ public class ShareActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-
             }
-
-
         });
 
-        qr=findViewById(R.id.qr);
+        qr = findViewById(R.id.qr);
         qr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

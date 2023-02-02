@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#ECECEC"
     tools:context="com.example.my_project_01.ui.notifications.member.ChangeMyMassageActivity">
 
     <LinearLayout
@@ -42,7 +43,7 @@
                 android:layout_gravity="center"
                 android:layout_marginRight="25dp"
                 android:text="儲存"
-                android:textColor="#ff0000"
+                android:textColor="#D8CC3C3C"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -52,8 +53,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:layout_marginTop="15dp"
-        android:background="#CDCCCA">
+        android:layout_marginTop="10dp"
+        android:background="#C3AC9D">
 
 
         <LinearLayout
@@ -63,11 +64,11 @@
 
             <ImageView
                 android:id="@+id/revice"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/revice"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/pepple_gray"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="50dp"/>
 
 
         </LinearLayout>
@@ -77,29 +78,33 @@
     <Button
         android:id="@+id/btn_update"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:gravity="center"
         android:text="修改"
+        android:textStyle="bold"
+        android:textSize="15dp"
         android:textColor="@color/white"
         android:background="@color/black"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#FFFFFF">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="0.2"
                 android:text="姓名:"
-                android:textSize="20dp" />
+                android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/ed_name"
@@ -107,21 +112,24 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:inputType="text"
+                android:background="@null"
                 android:layout_weight="1" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/frame">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_weight="0.4"
                 android:text="手機號碼:"
-                android:textSize="20dp" />
+                android:layout_marginLeft="20dp"
+                android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/ed_phone"
@@ -130,21 +138,24 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@null"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/frame">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="0.2"
                 android:text="性別:"
-                android:textSize="20dp" />
+                android:textSize="18dp" />
 
             <RadioGroup
                 android:id="@+id/rg_gender"
@@ -157,29 +168,31 @@
                     android:id="@+id/male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:text="男性" />
 
                 <RadioButton
                     android:id="@+id/female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="女性" />
+                    android:text="女性"
+                    android:layout_marginLeft="10dp"/>
             </RadioGroup>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/frame">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_weight="0.3"
                 android:text="生日:"
-                android:textSize="20dp" />
+                android:textSize="18dp"
+                android:layout_marginLeft="20dp"/>
             <TextView
                 android:id="@+id/tv_date"
                 android:layout_width="0dp"
@@ -194,7 +207,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.4"
-                android:text="點擊設置"/>
+                android:text="點擊設置"
+                android:backgroundTint="#C3AC9D"/>
         </LinearLayout>
 
     </LinearLayout>

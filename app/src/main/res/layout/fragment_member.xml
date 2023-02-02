@@ -11,34 +11,37 @@
         android:id="@+id/mem_back"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#3E000000"
+        android:background="#C3AC9D"
         app:layout_constraintBottom_toTopOf="@+id/frag_mem_gl_h1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/mem_head"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/github"
+        android:src="@drawable/pepple_gray"
         app:layout_constraintBottom_toTopOf="@+id/frag_mem_gl_h1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frag_mem_gl_h11"/>
+
+
 
     <TextView
         android:id="@+id/mem_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:gravity="center"
         android:text="abcdefg12345"
-        android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/mem_head"
-        app:layout_constraintTop_toTopOf="@+id/mem_head"
-        tools:layout_editor_absoluteX="102dp" />
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/mem_lv"
+        app:layout_constraintTop_toBottomOf="@id/frag_mem_gl_h11"
+        app:layout_constraintStart_toEndOf="@id/mem_head"
+        app:layout_constraintEnd_toStartOf="@id/frag_mem_gl_v2"/>
 
     <TextView
         android:id="@+id/mem_lv"
@@ -46,72 +49,82 @@
         android:layout_height="wrap_content"
         android:text="白金會員"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/mem_head"
-        app:layout_constraintEnd_toEndOf="@+id/mem_id"
-        app:layout_constraintStart_toStartOf="@+id/mem_id" />
+        app:layout_constraintBottom_toTopOf="@id/frag_mem_gl_h1"
+        app:layout_constraintTop_toBottomOf="@id/mem_id"
+        app:layout_constraintStart_toEndOf="@id/mem_head"
+        app:layout_constraintEnd_toStartOf="@id/frag_mem_gl_v2"
+        />
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:src="?android:attr/actionModeFindDrawable"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    app:layout_constraintTop_toBottomOf="@id/frag_mem_gl_h1"
-    >
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal">
-    <Button
         android:id="@+id/buy_cart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/member_list"
+        app:layout_constraintTop_toBottomOf="@id/frag_mem_gl_h1">
 
-        android:text="購買清單"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/frag_mem_gl_h1_1"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="@+id/frag_mem_gl_v1"
-        app:layout_constraintTop_toBottomOf="@id/frag_mem_gl_h1"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/view_Image"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="?android:attr/actionModeFindDrawable"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintStart_toEndOf="@id/buy_cart"
-        app:layout_constraintTop_toBottomOf="@+id/frag_mem_gl_h1" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00000000"
+                android:text="購買清單"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:gravity="center_vertical"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toTopOf="@+id/frag_mem_gl_h1_1"
+                app:layout_constraintStart_toStartOf="@+id/frag_mem_gl_v1"
+                app:layout_constraintTop_toBottomOf="@id/frag_mem_gl_h1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/view_Image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/findist"
+                android:layout_gravity="left"
+                app:layout_constraintBottom_toTopOf="@+id/view"
+                app:layout_constraintStart_toEndOf="@id/buy_cart"
+                app:layout_constraintTop_toBottomOf="@+id/frag_mem_gl_h1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查看全部 >"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toTopOf="@+id/frag_mem_gl_h1_1"
+                app:layout_constraintEnd_toEndOf="@+id/frag_mem_gl_v2"
+                app:layout_constraintHorizontal_bias="0.48"
+                app:layout_constraintTop_toBottomOf="@id/frag_mem_gl_h1"
+                app:layout_constraintVertical_bias="0.0" />
+        </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal">
-    <TextView
-        android:id="@+id/all"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="查看全部 >"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/frag_mem_gl_h1_1"
-        app:layout_constraintEnd_toEndOf="@+id/frag_mem_gl_v2"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintTop_toBottomOf="@id/frag_mem_gl_h1"
-        app:layout_constraintVertical_bias="0.0" />
-    </LinearLayout>
-</LinearLayout>
 
     <ListView
         android:id="@+id/member_list"
@@ -131,14 +144,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2003035" />
+        app:layout_constraintGuide_percent="0.2" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/frag_mem_gl_h11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/frag_mem_gl_h1_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.29" />
+        app:layout_constraintGuide_end="470dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/frag_mem_gl_h2"
